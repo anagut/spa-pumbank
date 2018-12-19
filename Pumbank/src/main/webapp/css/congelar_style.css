@@ -1,0 +1,285 @@
+body{
+    /* background:  rgb(241, 174, 174); */
+    font-family: 'Original Surfer', cursive;}
+
+#fondo{background:white;
+    text-align: center;
+    height: 100%; width: 100%;
+    display: inline-block;
+    margin: 0% 0% 0% 0%;}
+
+header{width: 100%; height: 25%;
+ 
+    color: white;}
+
+    section > div{width: 90%;
+        background-color: rgb(236, 223, 223);
+        border: 5px solid rgb(179, 58, 58);
+        margin: 10px auto;
+        float: center;
+        font-size: 1em;
+        color: black;
+        text-decoration: none;
+        padding: 2em;
+        }
+        #congelar{height: 100%;
+            border: 5px solid rgb(179, 58, 58);
+        margin: auto;
+    padding: auto;}
+    button.tu{background: red;
+    font-weight: bold;
+margin: 5px;}
+input{
+    width: 80%;
+    margin: 5px;
+}
+    
+        
+
+header > div#logo {width: 100%; height: 100%;
+    background: url(../imgs/silueta.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    margin: 0 auto;
+    background-size: contain;
+    padding: 0%;}
+    .btn-group{width: 100%;}
+
+button#red{
+    background: red;
+    align-content: center;
+    height: 100%;
+    width: 100%
+}
+button#blue{
+    background: blue;
+    align-content: center;
+    height: 100%;
+    width: 100%;
+}
+button#green{
+    height: 100%;
+    align-content: center;
+    width: 100%;
+    background: green;
+}
+
+header > div > div{width: 100%; height: 100%}
+
+img.bellota{width: 50px;}
+button.btn-btn-secondary-dropdown-toggle{border: none; background: none;}
+header > div#menulateral {background: white; margin: 0%; position: fixed;
+z-index: 10000;}
+
+section{width: 100%; height: 75%;
+    margin: 0 auto;
+float:center;}
+
+section > div{width: 100%}
+
+section > div > a{width: 90%;
+    background-color: rgb(236, 223, 223);
+    border: 5px solid rgb(179, 58, 58);
+    margin: 5%;
+    font-size: 1.5em;
+    color: black; 
+    text-decoration: none;
+    display: inline-flex;
+    text-align: left;
+    position: relative;
+}
+p.derecha{
+    position: absolute;
+    right: 10px;
+}
+
+input.noflechas [type='number'] {
+    -moz-appearance:textfield;
+}
+
+input.noflechas::-webkit-outer-spin-button,
+input.noflechas::-webkit-inner-spin-button {
+    -webkit-appearance: none;}
+
+
+section > div > a:hover{color: black; text-decoration: none;}
+
+#name{width: 100%; height: 100%;
+    margin: 0%;
+    padding: 100px;
+    color: white;
+    font-size: 1.5em;}
+
+#name:hover{font-size: 2em;}
+
+a{text-decoration: none;
+color: black;}
+a:hover{text-decoration: none;
+color: black;}
+
+
+.dropdown-menu {margin: 15px;
+    font-size: 2em;}
+
+header > div#boton {position: fixed;
+    z-index: 10000;
+}
+
+/* aqui es el boton de la bellota */
+/* div.btn-group{
+    color: yellow;
+}
+div#boton{
+    background: white;
+    margin: 0%;
+} */
+
+.esconder {display: none;}
+
+.error {font-size: 12px;
+    color: red;
+    margin: auto;
+    padding: 0 0 3% 0;}
+    
+ #errorConexion {margin: auto;
+ padding: 0}
+ 
+ .botones{
+	margin-top: 5%;
+	margin-bottom: 5%;
+}
+
+
+@media screen and (min-width: 568px){
+    #congelar{height: 100%;}
+
+    section{width: 80%;
+        float: center;
+        margin: 0 auto;}
+
+    #name{width: 100%; height: 100%;
+        margin: 0 auto;
+        padding: 75px 75px 100px 75px;
+        color: white;
+        font-size: 2em;}
+
+    #name:hover{font-size: 2.2em;}
+
+    section > div{width: 90%;
+        background-color: rgb(236, 223, 223);
+       
+        margin: 10px 0 auto;
+        float: center;
+        font-size: 2em;
+        color: black;
+        text-decoration: none;
+        }
+
+    section > div > a:hover{color: black; text-decoration: none;}
+
+    img.bellota{width: 70px;}
+
+    .dropdown-menu {margin: 17px;
+        font-size: 3em;}
+        
+    }
+
+@media screen and (min-width: 768px){
+
+    #congelar{height: 100%;}
+    #name{width: 100%; height: 100%;
+        margin: 0 auto;
+        padding: 100px 100px 135px 100px;
+        color: white;
+        font-size: 2.4em;}
+
+    #name:hover{font-size: 2.6em;}
+
+    section{width: 70%;
+        float: center;
+    margin: 0 auto;}
+
+    section > div{width: 90%;
+        background-color: rgb(236, 223, 223);
+        border: 5px solid rgb(179, 58, 58);
+        margin: 10px 0 auto;
+        float: center;
+        font-size: 1.9em;
+        color: black;
+        text-decoration: none;
+        }
+
+    section > div > a:hover{color: black; text-decoration: none;}
+
+    img.bellota{width: 90px;}
+
+    .dropdown-menu {margin: 15px;
+        font-size: 3.4em;}
+        
+    }
+
+@media screen and (min-width: 992px){
+
+    /* #name{width: 100%; height: 100%;
+        margin: 0 auto;
+        padding: 125px 125px 160px 125px;
+        color: white;
+        font-size: 2.8em;}
+    #name:hover{font-size: 3em;} */
+
+        section{width: 60%;
+            float: center;
+            margin: 0 auto;}
+    
+        section > div{width: 90%;
+            background-color: rgb(236, 223, 223);
+            border: 5px solid rgb(179, 58, 58);
+            margin: 10px 0 auto;
+            float: center;
+            font-size: 1.9em;
+            color: black;
+            text-decoration: none;
+            }
+    
+            #congelar{height: 100%;}
+        section > div > a:hover{color: black; text-decoration: none;}
+
+        img.bellota{width: 100px;}
+    
+        .dropdown-menu {margin: 19px;
+            font-size: 3.7em;}
+            
+        }
+
+@media screen and (min-width: 1200px){
+
+    /* #name{width: 100%; height: 100%;
+        margin: 0 auto;
+        padding: 150px 150px 190px 150px;
+        color: white;
+        font-size: 3.5em;}
+    #name:hover{font-size: 3.7em;} */
+
+        section{width: 50%;
+        float: center;
+        margin: 0 auto;}
+    
+        section > div{width: 90%;
+            background-color: rgb(236, 223, 223);
+            border: 5px solid rgb(179, 58, 58);
+            margin: 10px 0 auto;
+            float: center;
+            font-size: 1.9em;
+            color: black;
+            text-decoration: none;
+            display: inline-block}
+    
+            #congelar{height: 100%;}
+        section > div > a:hover{color: black; text-decoration: none;}
+
+        img.bellota{width: 130px;}
+
+        .dropdown-menu {margin: 21px;
+            font-size: 4em;}
+            
+        }

@@ -1,0 +1,195 @@
+body{font-family: 'Original Surfer', cursive;}
+    
+body > div{background:white;
+        text-align: center;
+        font-family: 'Original Surfer', cursive;
+        height: 100%; width: 100%;
+        display: block;
+        margin: 0 auto;
+        padding: 0 auto;}
+
+header{width: 100%; height: 25%;
+    margin: 0 auto;
+    color: white;
+    display: block;
+    float: initial;}
+
+header > div{width: 100%; height: 100%;
+    background: url(../imgs/silueta.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    margin: auto}
+
+header > div > div{width: 100%; height: 100%}
+
+h1{padding: 0 auto;
+    width: 90%;
+    color: rgb(179, 58, 58);
+    margin: 0 auto;
+    margin-bottom: 50px;
+    font-size: 2em;
+    text-decoration: none;
+    display: block;}
+
+section{width: 90%; height: 75%;
+    margin: 0 auto}
+
+section > div{width: 100%}
+
+form{margin: 0 auto}
+
+form > div > div{font-size: 1.3em; display: inline-block}
+
+form > div{margin: 5%}
+
+form > div > input{ display: inline-block}
+
+input{border: 5px solid rgb(179, 58, 58);}
+
+#name{width: 100%; height: 100%;
+    margin: 0 auto;
+    padding: 50px 50px 65px 50px;
+    color: white;
+    font-size: 1.5em;}
+
+#name:hover{font-size: 1.8em;}
+
+#user{padding-left: 10px;
+    width: 70%;
+    background-color: rgb(236, 223, 223);
+    border: 5px solid rgb(179, 58, 58);
+    margin: 0 auto;
+    margin-bottom: 40px;
+    font-size: 1.5em;
+    color: black;
+    text-decoration: none;
+    display: inline-block;}
+
+#money{padding-left: 10px;
+    width: 90%;
+    background-color: rgb(236, 223, 223);
+    border: 5px solid rgb(179, 58, 58);
+    margin: 0 auto;
+    margin-bottom: 40px;
+    padding: 10px;
+    font-size: 1.2em;
+    color: black;
+    text-decoration: none;
+    display: block;}
+
+
+
+#boton{background-color: rgb(179, 58, 58);
+    color: white;
+    padding: 30px 10px;
+    border-radius: 30px}
+
+#footer{width: 85%; margin: 0 auto; padding-top: 50px;}
+
+section > div > a:hover{color: black; text-decoration: none; font-size: 2em}
+
+
+
+a{text-decoration: none;
+color: black;}
+a:hover{text-decoration: none;
+color: black;}
+
+
+@media screen and (min-width: 568px){
+
+    body > div{width: 80%}
+
+    
+
+    #name{width: 100%; height: 100%;
+        margin: 0 auto;
+        padding: 75px 75px 100px 75px;
+        color: white;
+        font-size: 2em;}
+
+    #name:hover{font-size: 2.2em;}
+
+    form{width: 90%;
+        margin: 0 auto;
+        float: center;
+        font-size: 1.4em;
+        color: black;
+        text-decoration: none;
+        }
+
+    section > div > a:hover{color: black; text-decoration: none; font-size: 2.2em}
+        
+    }
+
+@media screen and (min-width: 768px){
+
+    #name{width: 100%; height: 100%;
+        margin: 0 auto;
+        padding: 100px 100px 135px 100px;
+        color: white;
+        font-size: 1.8em;}
+
+    #name:hover{font-size: 2em;}
+
+    body > div{width: 70%}
+
+    form{width: 90%;
+        margin: 0 auto;
+        float: center;
+        font-size: 1.4em;
+        color: black;
+        text-decoration: none;
+        }
+
+    section > div > a:hover{color: black; text-decoration: none; font-size: 2.1em}
+        
+    }
+
+@media screen and (min-width: 992px){
+
+    /* #name{width: 100%; height: 100%;
+        margin: 0 auto;
+        padding: 125px 125px 160px 125px;
+        color: white;
+        font-size: 2.8em;}
+
+    #name:hover{font-size: 3em;} */
+
+    body > div{width: 60%}
+
+    form{width: 90%;
+            margin: 0 auto;
+            float: center;
+            font-size: 1.4em;
+            color: black;
+            text-decoration: none;
+            }
+    
+        section > div > a:hover{color: black; text-decoration: none; font-size: 2.1em}
+            
+        }
+
+@media screen and (min-width: 1200px){
+
+    /* #name{width: 100%; height: 100%;
+        margin: 0 auto;
+        padding: 150px 150px 190px 150px;
+        color: white;
+        font-size: 3.5em;}
+
+    #name:hover{font-size: 3.7em;} */
+
+    body > div{width: 50%}
+
+    form{width: 90%;
+            margin: 0 auto;
+            float: center;
+            font-size: 1.4em;
+            color: black;
+            text-decoration: none;
+            display: inline-block}
+    
+        section > div > a:hover{color: black; text-decoration: none; font-size: 2.1em}
+            
+        }

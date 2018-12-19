@@ -1,0 +1,226 @@
+body{
+    /* background:  rgb(241, 174, 174); */
+    font-family: 'Original Surfer', cursive;}
+
+#fondo{background:white;
+    text-align: center;
+    height: 100%; width: 100%;
+    display: inline-block;
+    margin: 0% 0% 0% 0%;}
+
+header{width: 100%; height: 25%;
+ 
+    color: white;}
+
+    section > div{width: 90%;
+        background-color: rgb(236, 223, 223);
+       
+        margin: 10px 0 auto;
+        float: center;
+        font-size: 1em;
+        color: black;
+        text-decoration: none;
+        }
+
+header > div#logo {width: 100%; height: 100%;
+        background: url(../imgs/silueta.jpg);
+        background-repeat: no-repeat;
+        background-position: center;
+        margin: 0 auto;
+        background-size: contain;
+        padding: 0%;}
+        .btn-group{width: 100%;}
+
+header > div > div{width: 100%; height: 100%}
+
+section{width: 90%; height: 75%;
+    margin: 0 auto;}
+
+section > div{width: 100%;}
+
+section > div > a{color: black; font-size: 1.6em;}
+
+section > div > a:hover{color: black; text-decoration: none; font-size: 1.9em}
+
+img.bellota{width: 50px;}
+button.btn-btn-secondary-dropdown-toggle{border: none; background: none;}
+header > div#boton {/*background: white;*/ margin: 0%; position: fixed;}
+.dropdown-menu {margin: 15px;
+    font-size: 2em;}
+
+header > div#boton {position: fixed;
+    z-index: 10000;
+}
+
+/* aqui es el boton de la bellota */
+div.btn-group{
+    color: yellow;
+}
+div#boton{
+    background: white;
+    margin: 0%;
+}
+body > div{background:white;
+    text-align: center;
+    font-family: 'Original Surfer', cursive;
+    height: 100%; width: 100%;
+    display: block;}
+
+header{width: 90%; height: 5%;
+    margin: 5% 5% 5% 5%;
+    color: black;
+    margin-bottom: 10%
+    }
+
+
+#name{width: 100%; height: 100%;
+        margin: 0 auto;
+        padding: 50px 50px 65px 50px;
+        color: white;
+        font-size: 1.5em;}
+h2{font-size: 1.5em;
+margin-bottom: 3%;
+margin-top: 5%
+}
+
+div>section {width: 100%; 
+    height: 100%;
+    margin: 0 auto;
+    }
+
+/* Form */
+
+div>section>form {width: 90%; 
+    /* height: 80%; */
+    margin: auto; 
+    background: white;
+    font-size: 1em;}
+
+
+/* 3 Bloques */
+
+div>section>form>div {
+
+    margin-top: 5%;
+    background: rgb(236, 223, 223);
+    border: 4px solid rgb(179, 58, 58);
+    height: 45%;
+}
+
+div>section>form>div>div {
+    width: 90%;
+    display: inline-block;
+    text-align: left;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    line-height: 1em
+    
+}
+
+#otrpag>div{
+    
+    text-align: center;
+    padding: 2px
+    
+}
+
+div>section>form>div>div>input {
+
+    vertical-align: top;
+}
+
+div>section>form>div>div>button {
+  float: right;
+  font-size: 0.8em;
+  height: 5%;
+}
+
+#boton{
+    font-size: 1.5em;
+    border: none;
+    background: none
+}
+
+
+
+
+@media screen and (min-width: 560px){
+
+div>section>form{width: 70%}
+
+}
+
+
+@media screen and (min-width: 768px){
+
+    h1{font-size: 2em}
+    h2{font-size: 1.5em;
+    margin-bottom: 3%;
+    margin-top: 5%
+    }
+    #name:hover{font-size: 2.2em;}
+    div>section>form{
+        width: 60%;
+        
+        margin: auto; 
+        background: white; 
+        font-size: 1em;
+    }
+    section > div > a:hover{color: black; text-decoration: none; font-size: 2.1em}
+    img.bellota{width: 130px;}    
+    .dropdown-menu {margin: 17px;
+        font-size: 3em;}
+         
+}
+
+@media screen and (min-width: 992px){
+
+    h1{font-size: 2em}
+    h2{font-size: 1.5em;
+    margin-bottom: 3%;
+    margin-top: 5%
+    }
+    
+    div>section>form{
+        width: 50%;
+        
+        margin: auto; 
+        background: white; 
+        font-size: 1em;
+    }
+    section > div > a:hover{color: black; text-decoration: none; font-size: 2.1em}
+    img.bellota{width: 130px;}
+    .dropdown-menu {margin: 19px;
+        font-size: 3.7em;}
+      
+}
+
+@media screen and (min-width: 1200px){
+    /* #name{width: 100%; height: 100%;
+        margin: 0 auto;
+        padding: 125px 125px 160px 125px;
+        color: white;
+        font-size: 2.8em;}
+
+    #name:hover{font-size: 3em;} */
+    
+
+        section{width: 50%}
+    
+        section > div{width: 90%;
+            background-color: rgb(236, 223, 223);
+            border: 5px solid rgb(179, 58, 58);
+            margin: 10px 0 auto;
+            float: center;
+            font-size: 1.9em;
+            color: black;
+            text-decoration: none;
+            display: inline-block}
+    
+        section > div > a:hover{color: black; text-decoration: none; font-size: 2.1em}
+        img.bellota{width: 130px;}
+        .dropdown-menu {margin: 21px;
+            font-size: 4em;}
+                   
+        }
+

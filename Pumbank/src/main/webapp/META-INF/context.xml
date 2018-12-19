@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Context>
+<Context>
+    <!-- Specify a JDBC datasource -->
+    <Resource name="jdbc/bbdd" auth="Container"
+        type="javax.sql.DataSource" username="user" password="pass"
+        driverClassName="com.mysql.jdbc.Driver"
+        url="url"
+        maxActive="10" maxIdle="4" />
+</Context>
