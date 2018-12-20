@@ -1,61 +1,72 @@
 <web-app version="3.1">
 	<display-name>Archetype Created Web Application</display-name>
-	<servlet>
-		<description></description>
-		<servlet-name>HijoServlet</servlet-name>
-		<display-name>HijoServlet</display-name>
-		<servlet-class>com.pumbank.servlet.HijoServlet</servlet-class>
-	</servlet>
-	<servlet>
-		<description>
-		</description>
-		<display-name>PadreServlet</display-name>
-		<servlet-name>PadreServlet</servlet-name>
-		<servlet-class>com.pumbank.servlet.PadreServlet</servlet-class>
-	</servlet>
 
 	<servlet>
-		<display-name>TransferenciaServlet</display-name>
-		<servlet-name>TransferenciaServlet</servlet-name>
-		<servlet-class>com.pumbank.servlet.TransferenciaServlet
+		<servlet-name>jersey-servlet</servlet-name>
+		<servlet-class>com.sun.jersey.spi.container.servlet.ServletContainer
 		</servlet-class>
-	</servlet>
-	<servlet>
-		<display-name>PagaServlet</display-name>
-		<servlet-name>PagaServlet</servlet-name>
-		<servlet-class>com.pumbank.servlet.PagaServlet</servlet-class>
-	</servlet>
-
-	<servlet>
-		<description>
-		</description>
-		<display-name>CongelarServlet</display-name>
-		<servlet-name>CongelarServlet</servlet-name>
-		<servlet-class>com.pumbank.servlet.CongelarServlet</servlet-class>
+		<init-param>
+			<param-name>com.sun.jersey.config.property.packages</param-name>
+			<param-value>com.ricardo.services</param-value>
+		</init-param>
+		<init-param>
+			<param-name>com.sun.jersey.api.json.POJOMappingFeature</param-name>
+			<param-value>true</param-value>
+		</init-param>
+		<load-on-startup>1</load-on-startup>
 	</servlet>
 
 	<servlet-mapping>
-		<servlet-name>HijoServlet</servlet-name>
-		<url-pattern>/hijo</url-pattern>
-	</servlet-mapping>
-	<servlet-mapping>
-		<servlet-name>PadreServlet</servlet-name>
-		<url-pattern>/padre</url-pattern>
+		<servlet-name>jersey-servlet</servlet-name>
+		<url-pattern>/api/*</url-pattern>
 	</servlet-mapping>
 
-	<servlet-mapping>
-		<servlet-name>TransferenciaServlet</servlet-name>
-		<url-pattern>/transferencia</url-pattern>
-	</servlet-mapping>
+	<filter>
+		<filter-name>CORS</filter-name>
+		<filter-class>com.thetransactioncompany.cors.CORSFilter</filter-class>
 
+		<init-param>
+			<param-name>cors.allowGenericHttpRequests</param-name>
+			<param-value>true</param-value>
+		</init-param>
 
-	<servlet-mapping>
-		<servlet-name>PagaServlet</servlet-name>
-		<url-pattern>/paga</url-pattern>
-	</servlet-mapping>
-	<servlet-mapping>
-		<servlet-name>CongelarServlet</servlet-name>
-		<url-pattern>/congelar</url-pattern>
-	</servlet-mapping>
+		<init-param>
+			<param-name>cors.allowOrigin</param-name>
+			<param-value>*</param-value>
+		</init-param>
+
+		<init-param>
+			<param-name>cors.allowSubdomains</param-name>
+			<param-value>false</param-value>
+		</init-param>
+
+		<init-param>
+			<param-name>cors.supportedMethods</param-name>
+			<param-value>GET, HEAD, POST, PUT, DELETE, OPTIONS</param-value>
+		</init-param>
+
+		<init-param>
+			<param-name>cors.supportedHeaders</param-name>
+			<param-value>*, Content-Type, X-Requested-With, username, password,
+				token</param-value>
+		</init-param>
+
+		<init-param>
+			<param-name>cors.supportsCredentials</param-name>
+			<param-value>true</param-value>
+		</init-param>
+
+		<init-param>
+			<param-name>cors.maxAge</param-name>
+			<param-value>3600</param-value>
+		</init-param>
+
+	</filter>
+
+	<filter-mapping>
+		<!-- CORS Filter mapping -->
+		<filter-name>CORS</filter-name>
+		<url-pattern>*</url-pattern>
+	</filter-mapping>
 
 </web-app>
