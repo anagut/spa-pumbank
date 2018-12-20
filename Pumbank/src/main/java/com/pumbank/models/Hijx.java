@@ -155,5 +155,18 @@ public class Hijx {
 	public void setContraseña(String contraseña) {
 		this.contraseña = contraseña;
 	}
+
+
+	public boolean validate() {
+		boolean isValid=true;
+		
+		if(this.nombre==null || this.nombre.equals("")) isValid=false;
+		if(this.apellidos==null || this.apellidos.equals("")) isValid=false;
+		if(this.fecha_nacimiento==null || this.fecha_nacimiento.equals("")) isValid=false;
+		if(this.email==null || this.email.equals("")) isValid=false;
+		if(this.contraseña==null || this.contraseña.equals("")) isValid=false;
+		
+		return isValid;
+	}
 	
 }
