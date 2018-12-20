@@ -1,5 +1,7 @@
 package services;
 
+import java.util.List;
+
 import javax.ws.rs.Consumes;
 import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
@@ -13,28 +15,81 @@ import javax.ws.rs.core.Response;
 
 import com.pumbank.models.Congelar;
 import com.pumbank.models.Hijx;
+import com.pumbank.models.Padre;
 import com.pumbank.models.Paga;
+import com.pumbank.models.StatusMessage;
+import com.pumbank.persistance.HijoManager;
+import com.pumbank.persistance.PadreManager;
 
 @Path("/padre/{pid}")
 public class PadreService {
 
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
-	public Response getPadre(@PathParam("pid") int pid) {
-		return null;}
+	public Response getPadre(@PathParam("pid") int pid){
+		
+		Response resp = null;
+		Padre padre;
+		try {
+			padre = PadreManager.getInstance().getPadre(pid);
+			
+			if (padre == null) {
+				resp = Response.status(404).entity(new StatusMessage(404, "El usuario padre no existe")).build();
+			} else {
+				resp = Response.status(200).entity(padre).build();
+			}
+		} catch (Exception e) {
+			System.out.println("Error catch:"+e.getMessage());
+			e.printStackTrace();
+		}
+		
+		
+
+		return resp;
+	}
 	
 	@Path("/hijos")
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
-	public Response getHijos() {
-		return null;
+	public Response getHijos(@PathParam("pid") int pid){
+		Padre padre;
+		try {
+			padre = PadreManager.getInstance().getPadre(pid);
+			
+			List<Hijx> hijos = padre.getHijos();
+			
+			return Response.status(200).entity(hijos).build();
+			
+		} catch (Exception e) {
+			System.out.println("Error catch:"+e.getMessage());
+			e.printStackTrace();
+			return Response.status(404).entity().build();
+		}
+		
+
 	}
 	
 	@POST
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Produces(MediaType.APPLICATION_JSON)
-	public Response addHijo (Hijx hijoNuevo) {
-		return null;
+	public Response addHijo(Hijx hijo) {
+		Response resp = null;
+		
+		if (hijo.validate()) {
+			try {
+				HijoManager.getInstance().createHijo(hijo);
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
+			resp = Response.status(200).entity(hijo).build();
+			
+		} else {
+			resp = Response.status(400).entity(new StatusMessage(400, "No se han rellenado los datos correctamente")).build();
+		}
+
+		return resp;
 	}
 	
 	@Path("/hijos/{hid}")
