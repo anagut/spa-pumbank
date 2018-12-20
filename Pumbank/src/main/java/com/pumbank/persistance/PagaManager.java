@@ -110,61 +110,6 @@ public class PagaManager {
 	
 	
 	
-	@Path("/hijos/{hid}/paga")
-	@POST
-	@Consumes(MediaType.APPLICATION_JSON)
-	@Produces(MediaType.APPLICATION_JSON)
-	public Response addPaga(Paga unaPaga) {
-		Response resp = null;
-		try {
-			PagaManager pm = PagaManager.getInstance();
-			if (unaPaga.validate()) {
-				pm.addPaga(unaPaga);
-				resp = Response.status(200).entity(pm.addPaga(unaPaga)).build();
-			} else {
-				resp = Response.status(400).entity(new StatusMessage(400, "Pedido incompleto")).build();
-			}
-		} catch (Exception e) {
-			resp = Response.status(500).entity(new StatusMessage(500, "oops")).build();
-		}
-		return resp;
-	}
-
-	@Path("/hijos/{hid}/paga/{pgid}")
-	@GET
-	@Produces(MediaType.APPLICATION_JSON)
-	public Response getPaga(@PathParam("pgid") int pgid) {
-
-		try {
-			Paga pagadevuelta = PagaManager.getPaga(pgid);
-			return Response.status(200).entity(pagadevuelta).build();
-		} catch (Exception e) {
-			return Response.status(400).entity(new StatusMessage(400, "No hay paga")).build();
-		}
-	}
-
-	@PUT
-	@Consumes(MediaType.APPLICATION_JSON)
-	@Produces(MediaType.APPLICATION_JSON)
-	public boolean actualizarPaga(@PathParam("pgid") int pgid, Paga pagaAct) {
-
-		try {
-			actualizarPaga(pgid, pagaAct);
-			return true;
-		} catch (Exception e) {
-			return false;
-		}
-	}
-
-	@DELETE
-	@Produces(MediaType.APPLICATION_JSON)
-	public boolean deletePaga(@PathParam("pgid") int pgid) {
-		try {
-		deletePaga(pgid);
-		return true;
-		}catch (Exception e){
-		return false;
-	}
-		}
+	
 
 }
