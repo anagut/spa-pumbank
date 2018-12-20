@@ -82,7 +82,14 @@ public class Paga {
 		this.hid = hid;
 	}
 
-
+	public boolean validate() {
+		boolean isValid=true;
+		
+		if(this.cantidad<0) isValid=false;
+		if(this.frecuencia_dias<=0) isValid=false;
+		
+		return isValid;
+	}
 
 	
 }
