@@ -23,7 +23,7 @@ POST CREA PAGA
 curl POST -d "{\"pgid\":0,\"cantidad\":insertar_numero,\"frecuencia_dias\":insertar_numero}" -H(Content-Type:application/json) http://localhost:8080/PumbankAPI/api/padre/{pid}/hijos({hid}/paga -v
 
 PUT ACTUALIZA PAGA
-curl PUT -d "{\"pgid\":0,\"cantidad\":insertar_numero,\"frecuencia_dias\":insertar_numero}" -H(Content-Type:application/json) http://localhost:8080/PumbankAPI/api/padre/{pid}/hijos({hid}/paga -v
+curl PUT -d "{\"pgid\":0,\"cantidad\":insertar_numero,\"frecuencia_dias\":insertar_numero}" -H(Content-Type:application/json) http://localhost:8080/PumbankAPI/api/padre/{pid}/hijos({hid}/paga/{pgid} -v
 
 DELETE BORRA PAGA
 curl DELETE -H(Content-Type:application/json) http://localhost:8080/PumbankAPI/api/padre/{pid}/hijos({hid}/paga/{pgid} -v
@@ -32,7 +32,7 @@ GET OBTENER CONGELADO
 curl -H(Content-Type:application/json) http://localhost:8080/PumbankAPI/api/padre/{pid}/hijos({hid}/congelar -v
 
 PUT ACTUALIZAR CONGELADO
-curl PUT -d "{\"cid\":0,\"fecha_inicio\":\"yyyy-MM-dd\",\"fecha_fin\":\"yyyy-MM-dd\"}" -H(Content-Type:application/json) http://localhost:8080/PumbankAPI/api/padre/{pid}/hijos({hid}/congelar -v
+curl PUT -d "{\"cid\":0,\"fecha_inicio\":\"yyyy-MM-dd\",\"fecha_fin\":\"yyyy-MM-dd\"}" -H(Content-Type:application/json) http://localhost:8080/PumbankAPI/api/padre/{pid}/hijos({hid}/congelar/{cid} -v
 
 POST CREAR CONGELADO
 curl POST -d "{\"cid\":0,\"fecha_inicio\":\"yyyy-MM-dd\",\"fecha_fin\":\"yyyy-MM-dd\"}"  -H(Content-Type:application/json) http://localhost:8080/PumbankAPI/api/padre/{pid}/hijos({hid}/congelar -v
