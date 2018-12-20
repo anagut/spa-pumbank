@@ -6,6 +6,7 @@ import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
 
 import com.pumbank.models.Congelar;
+import com.pumbank.models.Paga;
 
 public class CongelarManager {
 	
@@ -54,10 +55,23 @@ public class CongelarManager {
 		Transaction t = session.beginTransaction();
 
 		int id = ((Integer) session.save(congelado)).intValue();
+		congelado.setConid(id);
 
 		t.commit();
 		session.close();
 
 		return id;
+	}
+	
+	public boolean deleteCongelar(int cid) {
+		Session session = sf.openSession();
+		Transaction t = session.beginTransaction();
+		
+		Congelar unCongelado= session.find(Congelar.class, cid);
+		session.delete(unCongelado);
+		
+		t.commit();
+		session.close();
+		return true;
 	}
 }
