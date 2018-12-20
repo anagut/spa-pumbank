@@ -110,7 +110,7 @@
 
 
 							<div class="botones">
-								<button id="accederbtn"><a href="./padre?pid=${elPadre.pid}">Confirmar</a></button>
+								<button id="accederbtn">Confirmar</button>
 								<button id="cancelarbtn">Cancelar</button>
 							</div>
 				</form>

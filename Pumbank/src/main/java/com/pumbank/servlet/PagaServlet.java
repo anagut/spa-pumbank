@@ -26,7 +26,6 @@ public class PagaServlet extends HttpServlet {
 		String hidrecibido = request.getParameter("hid");
 		int hidrec = Integer.parseInt(hidrecibido);
 		
-		
 		try {
 			Padre padre = PadreManager.getInstance().getPadre(pidrec);
 			request.setAttribute("elPadre", padre);

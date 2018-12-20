@@ -94,7 +94,7 @@
 							</div>
 
 							<div class="botones">
-								<button type="submit" id="confirmar_congelar"><a href="./padre?pid=${elPadre.pid}">Confirmar</a></button>
+								<button type="submit" id="confirmar_congelar">Confirmar</button>
 								<button id="cancelarbtn">Cancelar</button>
 							</div>
 

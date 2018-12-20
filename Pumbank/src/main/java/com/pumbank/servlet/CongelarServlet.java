@@ -72,7 +72,10 @@ public class CongelarServlet extends HttpServlet {
 			Date fecha_fin_D = format.parse(fecha_fin);
 			System.out.println(fecha_fin_D);
 
-			Congelar congelado = new Congelar();
+			Congelar congelado = new Congelar(0, fecha_inicio_D, fecha_fin_D, pid1, hid1);
+			
+			System.out.println(congelado.getCid());
+	
 
 			congelado.setFecha_inicio(fecha_inicio_D);
 
@@ -86,8 +89,12 @@ public class CongelarServlet extends HttpServlet {
 
 			CongelarManager.getInstance().createCongelar(congelado);
 			
+			System.out.println(congelado.getCid());
+			
 			Hijx hijo = HijoManager.getInstance().getHijo(hid1);
 			request.setAttribute("unH", hijo);
+			
+			System.out.println("holi");
 							
 			request.setAttribute("daleCongelado", congelado);
 			request.setAttribute("mensaje", "La cuenta ha sido congelada.");
@@ -102,7 +109,6 @@ public class CongelarServlet extends HttpServlet {
 					
 		}
 		
-		doGet(request, response);
 	}
 
 }

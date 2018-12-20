@@ -57,21 +57,23 @@
 					<div class="btn-group" role="group" aria-label="Basic example">
 						<div id="yellow" type="button" class="btn btn-group" role="group"
 							aria-label="Basic example">
-							<a href="./paga?hid=${unHijo.hid}&pid=${unP.pid}">Paga</a>
+							<a href="./paga?hid=${unHijo.hid}&&pid=${unP.pid}">Paga</a>
 						</div>
 						<div id="green" type="button" class="btn btn-group" role="group"
 							aria-label="Basic example">
-							<a href="./transferencia?hid=${unHijo.hid}&pid=${unP.pid}">Transferencia</a>
+							<a href="./transferencia?hid=${unHijo.hid}&&pid=${unP.pid}">Transferencia</a>
 						</div>
 						<div id="blue" type="button" class="btn btn-group" role="group"
 							aria-label="Basic example">
-							<a href="./congelar?hid=${unHijo.hid}&pid=${unP.pid}">Congelar</a>
+							<a href="./congelar?hid=${unHijo.hid}&&pid=${unP.pid}">Congelar</a>
 						</div>
 					</div>
 				</li>
 			</c:forEach>
 		</ul>
 	</div>
+	
+	
 
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
 		integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"

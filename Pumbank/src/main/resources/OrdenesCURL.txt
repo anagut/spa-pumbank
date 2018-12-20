@@ -1,0 +1,41 @@
+
+GET PADRE
+curl -H(Content-Type:application/json) http://localhost:8080/PumbankAPI/api/padre/{pid} -v
+
+GET LISTA DE HIJOS
+curl -H(Content-Type:application/json) http://localhost:8080/PumbankAPI/api/padre/{pid}/hijos -v
+
+POST AÑADIR UN HIJO
+
+curl -X POST -d "{\"hid\":0,\"nombre\":\"insertar\",\"apellidos\":\"insertar\",\"fecha_nacimiento\":\"yyyy-MM-dd\",\"saldo\":insertar_numero,\"email\":\"añadir@insertar\",\"contraseña\":\"insertar\"}" 
+-H(Content-Type:application/json) http://localhost:8080/PumbankAPI/api/padre/{pid}/hijos -v
+
+GET UN HIJO
+curl -H(Content-Type:application/json) http://localhost:8080/PumbankAPI/api/padre/{pid}/hijos({hid} -v
+
+PUT ACTUALIZAR SALDO
+curl PUT -d "{\"saldo\":insertar_numero}" -H(Content-Type:application/json) http://localhost:8080/PumbankAPI/api/padre/{pid}/hijos/{hid} -v
+
+GET OBTENER PAGA
+curl -H(Content-Type:application/json) http://localhost:8080/PumbankAPI/api/padre/{pid}/hijos({hid}/paga -v
+
+POST CREA PAGA
+curl POST -d "{\"pgid\":0,\"cantidad\":insertar_numero,\"frecuencia_dias\":insertar_numero}" -H(Content-Type:application/json) http://localhost:8080/PumbankAPI/api/padre/{pid}/hijos({hid}/paga -v
+
+PUT ACTUALIZA PAGA
+curl PUT -d "{\"pgid\":0,\"cantidad\":insertar_numero,\"frecuencia_dias\":insertar_numero}" -H(Content-Type:application/json) http://localhost:8080/PumbankAPI/api/padre/{pid}/hijos({hid}/paga -v
+
+DELETE BORRA PAGA
+curl DELETE -H(Content-Type:application/json) http://localhost:8080/PumbankAPI/api/padre/{pid}/hijos({hid}/paga/{pgid} -v
+
+GET OBTENER CONGELADO
+curl -H(Content-Type:application/json) http://localhost:8080/PumbankAPI/api/padre/{pid}/hijos({hid}/congelar -v
+
+PUT ACTUALIZAR CONGELADO
+curl PUT -d "{\"cid\":0,\"fecha_inicio\":\"yyyy-MM-dd\",\"fecha_fin\":\"yyyy-MM-dd\"}" -H(Content-Type:application/json) http://localhost:8080/PumbankAPI/api/padre/{pid}/hijos({hid}/congelar -v
+
+POST CREAR CONGELADO
+curl POST -d "{\"cid\":0,\"fecha_inicio\":\"yyyy-MM-dd\",\"fecha_fin\":\"yyyy-MM-dd\"}"  -H(Content-Type:application/json) http://localhost:8080/PumbankAPI/api/padre/{pid}/hijos({hid}/congelar -v
+
+DELETE BORRAR CONGELADO
+curl DELETE -H(Content-Type:application/json) http://localhost:8080/PumbankAPI/api/padre/{pid}/hijos({hid}/congelar/{cid} -v
