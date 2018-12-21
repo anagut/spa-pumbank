@@ -77,9 +77,6 @@ public class Padre {
 		return hijos;
 	}
 
-<<<<<<< HEAD
-
-
 	public Padre(int pid, String nombre, String apellidos, Date fechanacimiento, String tarjetacredito, int cvv,
 		String email, String password, int expiremonth, int expireyear, List<Hijx> hijos) {
 	super();
@@ -95,23 +92,6 @@ public class Padre {
 	this.expireyear = expireyear;
 	this.hijos = hijos;
 }
-=======
-	public Padre(int pid, String nombre, String apellidos, Date fechanacimiento, String tarjetacredito, int cvv,
-			String email, String password, int expiremonth, int expireyear, List<Hijx> hijos) {
-		super();
-		this.pid = pid;
-		this.nombre = nombre;
-		this.apellidos = apellidos;
-		this.fechanacimiento = fechanacimiento;
-		this.tarjetacredito = tarjetacredito;
-		this.cvv = cvv;
-		this.email = email;
-		this.password = password;
-		this.expiremonth = expiremonth;
-		this.expireyear = expireyear;
-		this.hijos = hijos;
-	}
->>>>>>> ff9f992c09e9858f7cfc5911ae9b452ea4e136c3
 
 	public int getPid() {
 		return pid;
@@ -171,33 +151,6 @@ public class Padre {
 
 	public String getPassword() {
 		return password;
-<<<<<<< HEAD
-	}
-
-	public void setPassword(String password) {
-		this.password = password;
-	}
-
-	public int getExpiremonth() {
-		return expiremonth;
-	}
-
-	public void setExpiremonth(int expiremonth) {
-		this.expiremonth = expiremonth;
-	}
-
-	public int getExpireyear() {
-		return expireyear;
-	}
-
-	public void setExpireyear(int expireyear) {
-		this.expireyear = expireyear;
-	}
-
-	public void setHijos(List<Hijx> hijos) {
-		this.hijos = hijos;
-	}
-=======
 	}
 
 	public void setPassword(String password) {
@@ -224,9 +177,6 @@ public class Padre {
 		this.hijos = hijos;
 	}
 
-	
 
-
->>>>>>> ff9f992c09e9858f7cfc5911ae9b452ea4e136c3
 
 }

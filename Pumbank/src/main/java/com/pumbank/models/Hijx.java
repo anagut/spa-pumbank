@@ -47,7 +47,6 @@ public class Hijx {
 	public Hijx() {}
 
 
-<<<<<<< HEAD
 	public Hijx(int hid, String nombre, String apellidos, Date fechanacimiento, Double saldo, String email,
 			String password, List<Padre> padre) {
 		super();
@@ -60,7 +59,7 @@ public class Hijx {
 		this.password = password;
 //		this.padre = padre;
 	}
-=======
+
 
 	public Hijx(int hid, String nombre, String apellidos, Date fechanacimiento, Double saldo, String email,
 		String password) {
@@ -73,13 +72,10 @@ public class Hijx {
 	this.email = email;
 	this.password = password;
 }
->>>>>>> ff9f992c09e9858f7cfc5911ae9b452ea4e136c3
-
 
 	public int getHid() {
 		return hid;
 	}
-
 
 
 	public void setHid(int hid) {
@@ -87,11 +83,9 @@ public class Hijx {
 	}
 
 
-
 	public String getNombre() {
 		return nombre;
 	}
-
 
 
 	public void setNombre(String nombre) {
@@ -99,11 +93,9 @@ public class Hijx {
 	}
 
 
-
 	public String getApellidos() {
 		return apellidos;
 	}
-
 
 
 	public void setApellidos(String apellidos) {
@@ -111,26 +103,14 @@ public class Hijx {
 	}
 
 
-<<<<<<< HEAD
-	public Date getFecha_nacimiento() {
-=======
-
 	public Date getFechanacimiento() {
->>>>>>> ff9f992c09e9858f7cfc5911ae9b452ea4e136c3
 		return fechanacimiento;
 	}
 
 
-<<<<<<< HEAD
-	public void setFecha_nacimiento(Date fecha_nacimiento) {
-		this.fechanacimiento = fecha_nacimiento;
-=======
-
 	public void setFechanacimiento(Date fechanacimiento) {
 		this.fechanacimiento = fechanacimiento;
->>>>>>> ff9f992c09e9858f7cfc5911ae9b452ea4e136c3
 	}
-
 
 
 	public Double getSaldo() {
@@ -138,11 +118,9 @@ public class Hijx {
 	}
 
 
-
 	public void setSaldo(Double saldo) {
 		this.saldo = saldo;
 	}
-
 
 
 	public String getEmail() {
@@ -150,32 +128,19 @@ public class Hijx {
 	}
 
 
-
 	public void setEmail(String email) {
 		this.email = email;
 	}
 
 
-<<<<<<< HEAD
-	public String getContraseña() {
-=======
-
 	public String getPassword() {
->>>>>>> ff9f992c09e9858f7cfc5911ae9b452ea4e136c3
 		return password;
 	}
 
 
-<<<<<<< HEAD
-	public void setContraseña(String contraseña) {
-		this.password = contraseña;
-=======
-
 	public void setPassword(String password) {
 		this.password = password;
->>>>>>> ff9f992c09e9858f7cfc5911ae9b452ea4e136c3
 	}
-
 
 
 	public boolean validate() {
