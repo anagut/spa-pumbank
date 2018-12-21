@@ -95,7 +95,7 @@ public class PadreService {
 	@Path("/hijos/{hid}")
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
-	public Response getHijo(int hid) {
+	public Response getHijo(@PathParam("pid") int pid, int hid) {
 
 		Response resp = null;
 		Hijx hijo;
@@ -135,9 +135,11 @@ public class PadreService {
 	@POST
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Produces(MediaType.APPLICATION_JSON)
-	public Response addPaga(Paga unaPaga) {
+	public Response addPaga(Paga unaPaga,@PathParam("hid") int hid, @PathParam("pid") int pid) {
 		Response resp = null;
 		try {
+			unaPaga.setHid(hid);
+			unaPaga.setPid(pid);
 			PagaManager pm = PagaManager.getInstance();
 			if (unaPaga.validate()) {
 				pm.addPaga(unaPaga);
@@ -160,9 +162,11 @@ public class PadreService {
 	public Response getPaga(@PathParam("pgid") int pgid) {
 
 		try {
-			Paga pagadevuelta = PagaManager.getPaga(pgid);
+			Paga pagadevuelta = PagaManager.getInstance().getPaga(pgid);
 			return Response.status(200).entity(pagadevuelta).build();
 		} catch (Exception e) {
+			e.getStackTrace();
+			System.out.println("Exception:"+e.getMessage());
 			return Response.status(400).entity(new StatusMessage(400, "No hay paga")).build();
 		}
 	}
@@ -171,10 +175,12 @@ public class PadreService {
 	@PUT
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Produces(MediaType.APPLICATION_JSON)
-	public boolean actualizarPaga(@PathParam("pgid") int pgid, Paga pagaAct) {
+	public boolean actualizarPaga(Paga pagaAct, @PathParam("pgid") int pgid,  @PathParam("hid") int hid, @PathParam("pid") int pid) {
 
 		try {
-			actualizarPaga(pgid, pagaAct);
+			pagaAct.setHid(hid);
+			pagaAct.setPid(pid);
+			PagaManager.getInstance().actualizarPaga(pagaAct);
 			return true;
 		} catch (Exception e) {
 			return false;
@@ -184,9 +190,9 @@ public class PadreService {
 	@Path("/hijos/{hid}/paga/{pgid}")
 	@DELETE
 	@Produces(MediaType.APPLICATION_JSON)
-	public boolean deletePaga(@PathParam("pgid") int pgid) {
+	public boolean deletePaga(@PathParam("pgid") int pgid, @PathParam("hid") int hid, @PathParam("pid") int pid) {
 		try {
-			deletePaga(pgid);
+			PagaManager.getInstance().deletePaga(pgid);
 			return true;
 		} catch (Exception e) {
 			return false;
@@ -197,7 +203,7 @@ public class PadreService {
 	@POST
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Produces(MediaType.APPLICATION_JSON)
-	public Response addCongelado(Congelar nuevoCongelado) {
+	public Response addCongelado(Congelar nuevoCongelado, @PathParam("hid") int hid, @PathParam("pid") int pid) {
 		Response resp = null;
 		try {
 			CongelarManager pm = CongelarManager.getInstance();
@@ -216,7 +222,7 @@ public class PadreService {
 	@Path("/hijos/{hid}/congelar/{cid}")
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
-	public Response getCongelado(@PathParam("cid") int cid) {
+	public Response getCongelado(@PathParam("cid") int cid, @PathParam("hid") int hid, @PathParam("pid") int pid) {
 		try {
 			Congelar congelado = CongelarManager.getInstance().getCongelar(cid);
 			return Response.status(200).entity(congelado).build();
@@ -229,9 +235,9 @@ public class PadreService {
 	@PUT
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Produces(MediaType.APPLICATION_JSON)
-	public boolean actualizarCongelado(@PathParam("cid") int cid, Congelar congelarAct) {
+	public boolean actualizarCongelado(@PathParam("cid") int cid, Congelar congelarAct, @PathParam("hid") int hid, @PathParam("pid") int pid) {
 		try {
-			actualizarCongelado(cid	, congelarAct);
+			CongelarManager.getInstance().updateCongelar(congelarAct);
 			return true;
 		} catch (Exception e) {
 			return false;
@@ -241,9 +247,9 @@ public class PadreService {
 	@Path("/hijos/{hid}/congelar/{cid}")
 	@DELETE
 	@Produces(MediaType.APPLICATION_JSON)
-	public boolean deleteCongelado(@PathParam("cid") int cid) {
+	public boolean deleteCongelado(@PathParam("cid") int cid, @PathParam("hid") int hid, @PathParam("pid") int pid) {
 		try {
-			deleteCongelado(cid);
+			CongelarManager.getInstance().deleteCongelar(cid);
 			return true;
 		} catch (Exception e) {
 			return false;
