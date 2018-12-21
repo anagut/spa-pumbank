@@ -5,6 +5,7 @@ import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -39,8 +40,8 @@ public class Hijx {
 	@Column(name="password")
 	private String contraseña;
 	
-	@ManyToMany(mappedBy = "hijos")
-	private List<Padre> padre;
+//	@ManyToMany(mappedBy = "hijos", fetch=FetchType.EAGER)
+//	private List<Padre> padre;
 	
 	
 	public Hijx() {}
@@ -56,7 +57,7 @@ public class Hijx {
 		this.saldo = saldo;
 		this.email = email;
 		this.contraseña = contraseña;
-		this.padre = padre;
+//		this.padre = padre;
 	}
 
 
@@ -70,14 +71,14 @@ public class Hijx {
 	}
 
 
-	public List<Padre> getPadre() {
-		return padre;
-	}
-
-
-	public void setPadre(List<Padre> padre) {
-		this.padre = padre;
-	}
+//	public List<Padre> getPadre() {
+//		return padre;
+//	}
+//
+//
+//	public void setPadre(List<Padre> padre) {
+//		this.padre = padre;
+//	}
 
 
 	public String getNombre() {
