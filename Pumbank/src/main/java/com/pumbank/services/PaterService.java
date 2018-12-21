@@ -122,6 +122,7 @@ public class PaterService {
 	public boolean hacerTransferencia(@PathParam("hid") int hid, Hijx hijo) {
 
 		try {
+			hijo.setHid(hid);
 			HijoManager.getInstance().updateHijo(hijo);
 			return true;
 		} catch (Exception e) {
