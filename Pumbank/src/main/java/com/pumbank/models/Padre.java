@@ -31,10 +31,10 @@ public class Padre {
 	private String apellidos;
 
 	@Column(name = "fecha_nacimiento")
-	private Date fecha_nacimiento;
+	private Date fechanacimiento;
 
 	@Column(name = "tarjeta_credito")
-	private String tarjeta_credito;
+	private String tarjetacredito;
 
 	@Column(name = "cvv")
 	private int cvv;
@@ -43,13 +43,13 @@ public class Padre {
 	private String email;
 
 	@Column(name = "password")
-	private String contraseña;
+	private String password;
 
 	@Column(name = "mes_caducidad")
-	private int mes_caducidad;
+	private int expiremonth;
 
 	@Column(name = "a_caducidad")
-	private int año_caducidad;
+	private int expireyear;
 
 	@ManyToMany(cascade = { CascadeType.ALL }, fetch=FetchType.EAGER)
 	@JoinTable(name = "padre_hijo_rel", joinColumns = { @JoinColumn(name = "padre") }, inverseJoinColumns = {
@@ -77,25 +77,23 @@ public class Padre {
 		return hijos;
 	}
 
-	public Padre(int pid, String nombre, String apellidos, Date fecha_nacimiento, String tarjeta_credito, int cvv,
-		String email, String contraseña, int mes_caducidad, int año_caducidad, List<Hijx> hijos) {
+
+
+	public Padre(int pid, String nombre, String apellidos, Date fechanacimiento, String tarjetacredito, int cvv,
+		String email, String password, int expiremonth, int expireyear, List<Hijx> hijos) {
 	super();
 	this.pid = pid;
 	this.nombre = nombre;
 	this.apellidos = apellidos;
-	this.fecha_nacimiento = fecha_nacimiento;
-	this.tarjeta_credito = tarjeta_credito;
+	this.fechanacimiento = fechanacimiento;
+	this.tarjetacredito = tarjetacredito;
 	this.cvv = cvv;
 	this.email = email;
-	this.contraseña = contraseña;
-	this.mes_caducidad = mes_caducidad;
-	this.año_caducidad = año_caducidad;
+	this.password = password;
+	this.expiremonth = expiremonth;
+	this.expireyear = expireyear;
 	this.hijos = hijos;
 }
-
-	public void setHijos(List<Hijx> hijos) {
-		this.hijos = hijos;
-	}
 
 	public int getPid() {
 		return pid;
@@ -121,20 +119,20 @@ public class Padre {
 		this.apellidos = apellidos;
 	}
 
-	public Date getFecha_nacimiento() {
-		return fecha_nacimiento;
+	public Date getFechanacimiento() {
+		return fechanacimiento;
 	}
 
-	public void setFecha_nacimiento(Date fecha_nacimiento) {
-		this.fecha_nacimiento = fecha_nacimiento;
+	public void setFechanacimiento(Date fechanacimiento) {
+		this.fechanacimiento = fechanacimiento;
 	}
 
-	public String getTarjeta_credito() {
-		return tarjeta_credito;
+	public String getTarjetacredito() {
+		return tarjetacredito;
 	}
 
-	public void setTarjeta_credito(String tarjeta_credito) {
-		this.tarjeta_credito = tarjeta_credito;
+	public void setTarjetacredito(String tarjetacredito) {
+		this.tarjetacredito = tarjetacredito;
 	}
 
 	public int getCvv() {
@@ -153,30 +151,32 @@ public class Padre {
 		this.email = email;
 	}
 
-	public String getContraseña() {
-		return contraseña;
+	public String getPassword() {
+		return password;
 	}
 
-	public void setContraseña(String contraseña) {
-		this.contraseña = contraseña;
+	public void setPassword(String password) {
+		this.password = password;
 	}
 
-	public int getMes_caducidad() {
-		return mes_caducidad;
+	public int getExpiremonth() {
+		return expiremonth;
 	}
 
-	public void setMes_caducidad(int mes_caducidad) {
-		this.mes_caducidad = mes_caducidad;
+	public void setExpiremonth(int expiremonth) {
+		this.expiremonth = expiremonth;
 	}
 
-	public int getAño_caducidad() {
-		return año_caducidad;
+	public int getExpireyear() {
+		return expireyear;
 	}
 
-	public void setAño_caducidad(int año_caducidad) {
-		this.año_caducidad = año_caducidad;
+	public void setExpireyear(int expireyear) {
+		this.expireyear = expireyear;
 	}
 
-
+	public void setHijos(List<Hijx> hijos) {
+		this.hijos = hijos;
+	}
 
 }

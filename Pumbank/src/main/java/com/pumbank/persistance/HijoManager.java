@@ -64,16 +64,23 @@ public class HijoManager {
 		
 	}
 	
-	public int createHijo(Hijx unHijo) throws Exception {
+	public Hijx createHijo(Hijx unHijo, int pid) throws Exception {
 		
 		Session session = sf.openSession();
 		Transaction t = session.beginTransaction();
 
 		int hid = ((Integer) session.save(unHijo)).intValue();
+		unHijo.setHid(hid);
+		
+		Padre padre = session.get(Padre.class, pid);
+		List<Hijx> hijosDelPadre = padre.getHijos();
+		hijosDelPadre.add(unHijo);
+		padre.setHijos(hijosDelPadre);
+		session.update(padre);
 
 		t.commit();
 		session.close();
 
-		return hid;
+		return unHijo;
 	}
 }

@@ -29,7 +29,7 @@ public class Hijx {
 	private String apellidos;
 	
 	@Column(name="fecha_nacimiento")
-	private Date fecha_nacimiento;
+	private Date fechanacimiento;
 	
 	@Column(name="saldo")
 	private Double saldo;
@@ -38,7 +38,7 @@ public class Hijx {
 	private String email;
 	
 	@Column(name="password")
-	private String contraseña;
+	private String password;
 	
 //	@ManyToMany(mappedBy = "hijos", fetch=FetchType.EAGER)
 //	private List<Padre> padre;
@@ -47,16 +47,16 @@ public class Hijx {
 	public Hijx() {}
 
 
-	public Hijx(int hid, String nombre, String apellidos, Date fecha_nacimiento, Double saldo, String email,
-			String contraseña, List<Padre> padre) {
+	public Hijx(int hid, String nombre, String apellidos, Date fechanacimiento, Double saldo, String email,
+			String password, List<Padre> padre) {
 		super();
 		this.hid = hid;
 		this.nombre = nombre;
 		this.apellidos = apellidos;
-		this.fecha_nacimiento = fecha_nacimiento;
+		this.fechanacimiento = fechanacimiento;
 		this.saldo = saldo;
 		this.email = email;
-		this.contraseña = contraseña;
+		this.password = password;
 //		this.padre = padre;
 	}
 
@@ -102,12 +102,12 @@ public class Hijx {
 
 
 	public Date getFecha_nacimiento() {
-		return fecha_nacimiento;
+		return fechanacimiento;
 	}
 
 
 	public void setFecha_nacimiento(Date fecha_nacimiento) {
-		this.fecha_nacimiento = fecha_nacimiento;
+		this.fechanacimiento = fecha_nacimiento;
 	}
 
 
@@ -149,12 +149,12 @@ public class Hijx {
 
 
 	public String getContraseña() {
-		return contraseña;
+		return password;
 	}
 
 
 	public void setContraseña(String contraseña) {
-		this.contraseña = contraseña;
+		this.password = contraseña;
 	}
 
 
@@ -163,9 +163,9 @@ public class Hijx {
 		
 		if(this.nombre==null || this.nombre.equals("")) isValid=false;
 		if(this.apellidos==null || this.apellidos.equals("")) isValid=false;
-		if(this.fecha_nacimiento==null || this.fecha_nacimiento.equals("")) isValid=false;
+		if(this.fechanacimiento==null || this.fechanacimiento.equals("")) isValid=false;
 		if(this.email==null || this.email.equals("")) isValid=false;
-		if(this.contraseña==null || this.contraseña.equals("")) isValid=false;
+		if(this.password==null || this.password.equals("")) isValid=false;
 		
 		return isValid;
 	}
