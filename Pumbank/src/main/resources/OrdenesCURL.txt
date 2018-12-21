@@ -7,8 +7,13 @@ curl  http://localhost:8080/Pumbank/api/padre/1/hijos -v
 
 POST AÑADIR UN HIJO
 
+<<<<<<< HEAD
 curl -X POST -d "{\"hid\":0,\"nombre\":\"insertar\",\"apellidos\":\"insertar\",\"fecha_nacimiento\":\"yyyy-MM-dd\",\"saldo\":insertar_numero,\"email\":\"añadir@insertar\",\"contraseña\":\"insertar\"}" 
 -H(Content-Type:application/json) http://localhost:8080/Pumbank/api/padre/{pid}/hijos -v
+=======
+curl -X POST -d "{\"hid\":0,\"nombre\":\"insertar\",\"apellidos\":\"aqui\",\"fechanacimiento\":\"2018-11-21\",\"saldo\":30,\"email\":\"insertar@gmail.com\",\"password\":\"insertar\"}" -H"Content-Type:application/json"
+ http://localhost:8080/Pumbank/api/padre/1/hijos -v
+>>>>>>> fe61a23614b7e66aff4f43d9ac09c514a1e59ea1
 
 GET UN HIJO
 curl -H(Content-Type:application/json) http://localhost:8080/PumbankAPI/api/padre/{pid}/hijos({hid} -v
