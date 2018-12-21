@@ -6,7 +6,7 @@ GET LISTA DE HIJOS
 curl  http://localhost:8080/Pumbank/api/padre/1/hijos -v
 
 POST AÑADIR UN HIJO
-curl -X POST -d "{\"hid\":0,\"nombre\":\"insertar\",\"apellidos\":\"insertar\",\"fechanacimiento\":\"yyyy-MM-dd\",\"saldo\":insertar_numero,\"email\":\"añadir@insertar\",\"contraseña\":\"insertar\"}" 
+curl -X POST -d "{\"hid\":0,\"nombre\":\"Junior\",\"apellidos\":\"Virgin\",\"fechanacimiento\":\"1990-11-22\",\"saldo\":20,\"email\":\"anadie@insertar\",\"password\":\"Virgin\"}" 
 -H"Content-Type:application/json" http://localhost:8080/Pumbank/api/padre/{pid}/hijos -v
 
 curl -X POST -d "{\"hid\":0,\"nombre\":\"insertar\",\"apellidos\":\"aqui\",\"fechanacimiento\":\"2018-11-21\",\"saldo\":30,\"email\":\"insertar@gmail.com\",\"password\":\"insertar\"}" -H"Content-Type:application/json"
