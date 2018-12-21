@@ -71,12 +71,12 @@ public class PaterService {
 	@POST
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Produces(MediaType.APPLICATION_JSON)
-	public Response addHijo(Hijx hijo) {
+	public Response addHijo(Hijx hijo, @PathParam("pid") int pid) {
 		Response resp = null;
 
 		if (hijo.validate()) {
 			try {
-				HijoManager.getInstance().createHijo(hijo);
+				HijoManager.getInstance().createHijo(hijo, pid);
 			} catch (Exception e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();

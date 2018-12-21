@@ -28,7 +28,7 @@ PUT ACTUALIZA PAGA
 curl -X PUT -d "{\"cantidad\":34,\"frecuencia\":45}" -H"Content-Type:application/json" http://localhost:8080/Pumbank/api/padre/1/hijos/1/paga/1 -v
 
 DELETE BORRA PAGA
-curl DELETE -H(Content-Type:application/json) http://localhost:8080/PumbankAPI/api/padre/{pid}/hijos({hid}/paga/{pgid} -v
+curl -X DELETE -H"Content-Type:application/json" http://localhost:8080/Pumbank/api/padre/1/hijos/1/paga/1 -v
 
 GET OBTENER CONGELADO
 curl -H(Content-Type:application/json) http://localhost:8080/PumbankAPI/api/padre/{pid}/hijos({hid}/congelar -v
