@@ -28,7 +28,7 @@ public class PadreManager {
 
 		Padre recP = session.get(Padre.class, pid);
 
-		//session.close();
+		session.close();
 
 		return recP;
 	}

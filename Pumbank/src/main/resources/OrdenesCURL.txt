@@ -1,6 +1,6 @@
 
 GET PADRE
-curl -H(Content-Type:application/json) http://localhost:8080/PumbankAPI/api/padre/{pid} -v
+curl http://localhost:8080/Pumbank/api/padre/1 -v
 
 GET LISTA DE HIJOS
 curl -H(Content-Type:application/json) http://localhost:8080/PumbankAPI/api/padre/{pid}/hijos -v
