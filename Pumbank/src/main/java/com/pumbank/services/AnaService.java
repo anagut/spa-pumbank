@@ -81,7 +81,15 @@ public Response getHijos(@PathParam("pid") int pid) {
 @PUT
 public boolean actualizarHijo(@PathParam("hid") int hid, Hijx hijo) {
 	
-	HijoManager.getInstance().updateHijo(hijo);
-	
-	return true;
+	try {
+		HijoManager.getInstance().updateHijo(hijo);
+		return true;
+	} catch (Exception e) {
+		System.out.println("Error catch:"+e.getMessage());
+		e.printStackTrace();
+		return false;
+	}
 }
+
+
+	
