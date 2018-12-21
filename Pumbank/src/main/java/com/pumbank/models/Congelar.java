@@ -93,7 +93,14 @@ public class Congelar {
 		this.fecha_fin = fecha_fin;
 	}
 
-
+	public boolean validate() {
+		boolean isValid=true;
+		
+		if(this.fecha_inicio==null) isValid=false;
+		if(this.fecha_fin!=null) isValid=false;
+		
+		return isValid;
+	}
 
 	
 }
