@@ -20,7 +20,7 @@ public class Paga {
 	private double cantidad;
 	
 	@Column(name="frecuencia")
-	private int frecuencia_dias;
+	private int frecuencia;
 	
 	@Column(name="padre")
 	private int pid;
@@ -31,11 +31,11 @@ public class Paga {
 	public Paga() {}
 	
 	
-	public Paga(int pgid, double cantidad, int frecuencia_dias, int pid, int hid) {
+	public Paga(int pgid, double cantidad, int frecuencia, int pid, int hid) {
 		super();
 		this.pgid = pgid;
 		this.cantidad = cantidad;
-		this.frecuencia_dias = frecuencia_dias;
+		this.frecuencia = frecuencia;
 		this.pid = pid;
 		this.hid = hid;
 	}
@@ -58,12 +58,12 @@ public class Paga {
 	}
 
 
-	public int getFrecuencia_dias() {
-		return frecuencia_dias;
+	public int getFrecuencia() {
+		return frecuencia;
 	}
 
-	public void setFrecuencia_dias(int frecuencia_dias) {
-		this.frecuencia_dias = frecuencia_dias;
+	public void setFrecuencia(int frecuencia) {
+		this.frecuencia = frecuencia;
 	}
 
 	public int getPid() {
@@ -86,7 +86,7 @@ public class Paga {
 		boolean isValid=true;
 		
 		if(this.cantidad<0) isValid=false;
-		if(this.frecuencia_dias<=0) isValid=false;
+		if(this.frecuencia<=0) isValid=false;
 		
 		return isValid;
 	}

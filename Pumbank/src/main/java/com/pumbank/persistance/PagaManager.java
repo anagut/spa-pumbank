@@ -58,7 +58,7 @@ public class PagaManager {
 
 	}
 
-	public static Paga getPaga(int pgid) throws Exception {
+	public Paga getPaga(int pgid) throws Exception {
 
 		Session session = sf.openSession();
 
