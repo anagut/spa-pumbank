@@ -19,12 +19,11 @@ import com.pumbank.persistance.PagaManager;
 
 public class CarlosService {
 
-	
 	@Path("/hijos/{hid}/congelar")
 	@POST
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Produces(MediaType.APPLICATION_JSON)
-	public Response addCongelado (Congelar nuevoCongelado ) {
+	public Response addCongelado(Congelar nuevoCongelado) {
 		Response resp = null;
 		try {
 			CongelarManager pm = CongelarManager.getInstance();
@@ -39,7 +38,7 @@ public class CarlosService {
 		}
 		return resp;
 	}
-	
+
 	@Path("/hijos/{hid}/congelar/{cid}")
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
@@ -51,18 +50,28 @@ public class CarlosService {
 			return Response.status(400).entity(new StatusMessage(400, "No hay paga")).build();
 		}
 	}
-	
+
 	@PUT
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Produces(MediaType.APPLICATION_JSON)
-	public boolean actualizarCongelado (@PathParam("cid") int cid, Congelar congelarAct) {
-		return false;
+	public boolean actualizarCongelado(@PathParam("cid") int cid, Congelar congelarAct) {
+		try {
+			actualizarCongelado(cid	, congelarAct);
+			return true;
+		} catch (Exception e) {
+			return false;
+		}
 	}
-	
+
 	@DELETE
 	@Produces(MediaType.APPLICATION_JSON)
-	public Response deleteCongelado(@PathParam("cid") int cid) {
-		return null;
+	public boolean deleteCongelado(@PathParam("cid") int cid) {
+		try {
+			deleteCongelado(cid);
+			return true;
+		} catch (Exception e) {
+			return false;
+		}
 	}
-	
+
 }

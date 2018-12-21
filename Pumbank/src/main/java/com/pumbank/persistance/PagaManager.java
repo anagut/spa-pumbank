@@ -107,12 +107,5 @@ public class PagaManager {
 		session.close();
 		return true;
 	}
-<<<<<<< HEAD
-=======
-	
-	
-	
-	
 
->>>>>>> 20a6a1886ad54c8f8d36618254ab19148c2a67d3
 }
