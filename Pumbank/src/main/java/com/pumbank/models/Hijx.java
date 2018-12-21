@@ -47,6 +47,7 @@ public class Hijx {
 	public Hijx() {}
 
 
+<<<<<<< HEAD
 	public Hijx(int hid, String nombre, String apellidos, Date fechanacimiento, Double saldo, String email,
 			String password, List<Padre> padre) {
 		super();
@@ -59,6 +60,20 @@ public class Hijx {
 		this.password = password;
 //		this.padre = padre;
 	}
+=======
+
+	public Hijx(int hid, String nombre, String apellidos, Date fechanacimiento, Double saldo, String email,
+		String password) {
+	super();
+	this.hid = hid;
+	this.nombre = nombre;
+	this.apellidos = apellidos;
+	this.fechanacimiento = fechanacimiento;
+	this.saldo = saldo;
+	this.email = email;
+	this.password = password;
+}
+>>>>>>> ff9f992c09e9858f7cfc5911ae9b452ea4e136c3
 
 
 	public int getHid() {
@@ -66,19 +81,11 @@ public class Hijx {
 	}
 
 
+
 	public void setHid(int hid) {
 		this.hid = hid;
 	}
 
-
-//	public List<Padre> getPadre() {
-//		return padre;
-//	}
-//
-//
-//	public void setPadre(List<Padre> padre) {
-//		this.padre = padre;
-//	}
 
 
 	public String getNombre() {
@@ -86,9 +93,11 @@ public class Hijx {
 	}
 
 
+
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
+
 
 
 	public String getApellidos() {
@@ -96,19 +105,32 @@ public class Hijx {
 	}
 
 
+
 	public void setApellidos(String apellidos) {
 		this.apellidos = apellidos;
 	}
 
 
+<<<<<<< HEAD
 	public Date getFecha_nacimiento() {
+=======
+
+	public Date getFechanacimiento() {
+>>>>>>> ff9f992c09e9858f7cfc5911ae9b452ea4e136c3
 		return fechanacimiento;
 	}
 
 
+<<<<<<< HEAD
 	public void setFecha_nacimiento(Date fecha_nacimiento) {
 		this.fechanacimiento = fecha_nacimiento;
+=======
+
+	public void setFechanacimiento(Date fechanacimiento) {
+		this.fechanacimiento = fechanacimiento;
+>>>>>>> ff9f992c09e9858f7cfc5911ae9b452ea4e136c3
 	}
+
 
 
 	public Double getSaldo() {
@@ -116,31 +138,17 @@ public class Hijx {
 	}
 
 
+
 	public void setSaldo(Double saldo) {
 		this.saldo = saldo;
 	}
 
-	public Double getSaldoMas() {
-		return saldo;
-	}
 
-
-	public void setSaldoMas(Double saldo) {
-		this.saldo += saldo;
-	}
-	
-	public Double getSaldoMenos() {
-		return saldo;
-	}
-
-
-	public void setSaldoMenos(Double saldo) {
-		this.saldo -= saldo;
-	}
 
 	public String getEmail() {
 		return email;
 	}
+
 
 
 	public void setEmail(String email) {
@@ -148,14 +156,26 @@ public class Hijx {
 	}
 
 
+<<<<<<< HEAD
 	public String getContraseña() {
+=======
+
+	public String getPassword() {
+>>>>>>> ff9f992c09e9858f7cfc5911ae9b452ea4e136c3
 		return password;
 	}
 
 
+<<<<<<< HEAD
 	public void setContraseña(String contraseña) {
 		this.password = contraseña;
+=======
+
+	public void setPassword(String password) {
+		this.password = password;
+>>>>>>> ff9f992c09e9858f7cfc5911ae9b452ea4e136c3
 	}
+
 
 
 	public boolean validate() {
