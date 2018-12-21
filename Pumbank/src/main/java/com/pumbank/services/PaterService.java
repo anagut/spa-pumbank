@@ -24,7 +24,7 @@ import com.pumbank.persistance.PadreManager;
 import com.pumbank.persistance.PagaManager;
 
 @Path("/padre/{pid}")
-public class PadreService {
+public class PaterService {
 
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
