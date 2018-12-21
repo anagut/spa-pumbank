@@ -178,6 +178,7 @@ public class PaterService {
 	public boolean actualizarPaga(Paga pagaAct, @PathParam("pgid") int pgid,  @PathParam("hid") int hid, @PathParam("pid") int pid) {
 
 		try {
+			pagaAct.setPgid(pgid);
 			pagaAct.setHid(hid);
 			pagaAct.setPid(pid);
 			PagaManager.getInstance().actualizarPaga(pagaAct);
@@ -208,6 +209,8 @@ public class PaterService {
 		try {
 			CongelarManager pm = CongelarManager.getInstance();
 			if (nuevoCongelado.validate()) {
+				nuevoCongelado.setHid(hid);
+				nuevoCongelado.setPid(pid);
 				pm.createCongelar(nuevoCongelado);
 				resp = Response.status(200).entity(pm.createCongelar(nuevoCongelado)).build();
 			} else {
@@ -237,6 +240,9 @@ public class PaterService {
 	@Produces(MediaType.APPLICATION_JSON)
 	public boolean actualizarCongelado(@PathParam("cid") int cid, Congelar congelarAct, @PathParam("hid") int hid, @PathParam("pid") int pid) {
 		try {
+			congelarAct.setHid(hid);
+			congelarAct.setPid(pid);
+			congelarAct.setConid(cid);
 			CongelarManager.getInstance().updateCongelar(congelarAct);
 			return true;
 		} catch (Exception e) {

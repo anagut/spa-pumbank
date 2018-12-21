@@ -53,7 +53,8 @@ public class PagaManager {
 			}
 		}
 
-//		session.close();
+		
+		session.close();
 		return paga;
 
 	}
