@@ -29,7 +29,7 @@ public class Hijx {
 	private String apellidos;
 	
 	@Column(name="fecha_nacimiento")
-	private Date fecha_nacimiento;
+	private Date fechanacimiento;
 	
 	@Column(name="saldo")
 	private Double saldo;
@@ -38,7 +38,7 @@ public class Hijx {
 	private String email;
 	
 	@Column(name="password")
-	private String contraseña;
+	private String password;
 	
 //	@ManyToMany(mappedBy = "hijos", fetch=FetchType.EAGER)
 //	private List<Padre> padre;
@@ -47,18 +47,18 @@ public class Hijx {
 	public Hijx() {}
 
 
-	public Hijx(int hid, String nombre, String apellidos, Date fecha_nacimiento, Double saldo, String email,
-			String contraseña, List<Padre> padre) {
-		super();
-		this.hid = hid;
-		this.nombre = nombre;
-		this.apellidos = apellidos;
-		this.fecha_nacimiento = fecha_nacimiento;
-		this.saldo = saldo;
-		this.email = email;
-		this.contraseña = contraseña;
-//		this.padre = padre;
-	}
+
+	public Hijx(int hid, String nombre, String apellidos, Date fechanacimiento, Double saldo, String email,
+		String password) {
+	super();
+	this.hid = hid;
+	this.nombre = nombre;
+	this.apellidos = apellidos;
+	this.fechanacimiento = fechanacimiento;
+	this.saldo = saldo;
+	this.email = email;
+	this.password = password;
+}
 
 
 	public int getHid() {
@@ -66,19 +66,11 @@ public class Hijx {
 	}
 
 
+
 	public void setHid(int hid) {
 		this.hid = hid;
 	}
 
-
-//	public List<Padre> getPadre() {
-//		return padre;
-//	}
-//
-//
-//	public void setPadre(List<Padre> padre) {
-//		this.padre = padre;
-//	}
 
 
 	public String getNombre() {
@@ -86,9 +78,11 @@ public class Hijx {
 	}
 
 
+
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
+
 
 
 	public String getApellidos() {
@@ -96,19 +90,23 @@ public class Hijx {
 	}
 
 
+
 	public void setApellidos(String apellidos) {
 		this.apellidos = apellidos;
 	}
 
 
-	public Date getFecha_nacimiento() {
-		return fecha_nacimiento;
+
+	public Date getFechanacimiento() {
+		return fechanacimiento;
 	}
 
 
-	public void setFecha_nacimiento(Date fecha_nacimiento) {
-		this.fecha_nacimiento = fecha_nacimiento;
+
+	public void setFechanacimiento(Date fechanacimiento) {
+		this.fechanacimiento = fechanacimiento;
 	}
+
 
 
 	public Double getSaldo() {
@@ -116,31 +114,17 @@ public class Hijx {
 	}
 
 
+
 	public void setSaldo(Double saldo) {
 		this.saldo = saldo;
 	}
 
-	public Double getSaldoMas() {
-		return saldo;
-	}
 
-
-	public void setSaldoMas(Double saldo) {
-		this.saldo += saldo;
-	}
-	
-	public Double getSaldoMenos() {
-		return saldo;
-	}
-
-
-	public void setSaldoMenos(Double saldo) {
-		this.saldo -= saldo;
-	}
 
 	public String getEmail() {
 		return email;
 	}
+
 
 
 	public void setEmail(String email) {
@@ -148,14 +132,17 @@ public class Hijx {
 	}
 
 
-	public String getContraseña() {
-		return contraseña;
+
+	public String getPassword() {
+		return password;
 	}
 
 
-	public void setContraseña(String contraseña) {
-		this.contraseña = contraseña;
+
+	public void setPassword(String password) {
+		this.password = password;
 	}
+
 
 
 	public boolean validate() {
@@ -163,9 +150,9 @@ public class Hijx {
 		
 		if(this.nombre==null || this.nombre.equals("")) isValid=false;
 		if(this.apellidos==null || this.apellidos.equals("")) isValid=false;
-		if(this.fecha_nacimiento==null || this.fecha_nacimiento.equals("")) isValid=false;
+		if(this.fechanacimiento==null || this.fechanacimiento.equals("")) isValid=false;
 		if(this.email==null || this.email.equals("")) isValid=false;
-		if(this.contraseña==null || this.contraseña.equals("")) isValid=false;
+		if(this.password==null || this.password.equals("")) isValid=false;
 		
 		return isValid;
 	}

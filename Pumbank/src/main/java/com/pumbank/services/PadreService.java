@@ -48,55 +48,51 @@ public class PadreService {
 		return resp;
 	}
 
-//	@Path("/hijos")
-//	@GET
-//	@Produces(MediaType.APPLICATION_JSON)
-//	public Response getHijos(@PathParam("pid") int pid) {
-//		Padre padre;
-//		try {
-//			padre = PadreManager.getInstance().getPadre(pid);
-//
-//			List<Hijx> hijos = padre.getHijos();
-//
-//			return Response.status(200).entity(hijos).build();
-//
-//		} catch (Exception e) {
-//			System.out.println("Error catch:" + e.getMessage());
-//			e.printStackTrace();
-//			return Response.status(404).entity(new StatusMessage(404, "No se ha encontrado lo que buscas")).build();
-//		}
-//
-//	}
-//
-//	@Path("/hijos")
-//	@POST
-//	@Consumes(MediaType.APPLICATION_JSON)
-//	@Produces(MediaType.APPLICATION_JSON)
-//	public Response addHijo(Hijx hijo) {
-//		Response resp = null;
-//
-//		if (hijo.validate()) {
-//			try {
-//				HijoManager.getInstance().createHijo(hijo);
-//			} catch (Exception e) {
-//				// TODO Auto-generated catch block
-//				e.printStackTrace();
-//			}
-//
-//			resp = Response.status(200).entity(hijo).build();
-//
-//		} else {
-//			resp = Response.status(400).entity(new StatusMessage(400, "No se han rellenado los datos correctamente"))
-//					.build();
-//		}
-//
-//		return resp;
-//	}
+	@Path("/hijos")
+	@GET
+	@Produces(MediaType.APPLICATION_JSON)
+	public Response getHijos(@PathParam("pid") int pid) {
+		Padre padre;
+		try {
+			padre = PadreManager.getInstance().getPadre(pid);
+
+			List<Hijx> hijos = padre.getHijos();
+
+			return Response.status(200).entity(hijos).build();
+
+		} catch (Exception e) {
+			System.out.println("Error catch:" + e.getMessage());
+			e.printStackTrace();
+			return Response.status(404).entity(new StatusMessage(404, "No se ha encontrado lo que buscas")).build();
+		}
+
+	}
+
+	@Path("/hijos")
+	@POST
+	@Consumes(MediaType.APPLICATION_JSON)
+	@Produces(MediaType.APPLICATION_JSON)
+	public Response addHijo(Hijx hijo) {
+		Response resp = null;
+
+		
+			try {
+				HijoManager.getInstance().createHijo(hijo);
+				resp = Response.status(200).entity(hijo).build();
+			} catch (Exception e) {
+				System.out.println("Error catch:" + e.getMessage());
+				e.printStackTrace();
+				resp=  Response.status(403).entity(new StatusMessage(403, "No pasaras")).build();
+			}
+
+
+		return resp;
+	}
 //
 //	@Path("/hijos/{hid}")
 //	@GET
 //	@Produces(MediaType.APPLICATION_JSON)
-//	public Response getHijo(int hid) {
+//	public Response getHijo(@PathParam("hid") int hid) {
 //
 //		Response resp = null;
 //		Hijx hijo;
