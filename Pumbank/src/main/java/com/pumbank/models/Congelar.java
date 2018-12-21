@@ -24,10 +24,10 @@ public class Congelar {
 	private int cid;
 	
 	@Column(name="fecha_inicio")
-	private Date fecha_inicio;
+	private Date fechainicio;
 	
 	@Column(name="fecha_fin")
-	private Date fecha_fin;
+	private Date fechafin;
 		
 	@Column(name="padre")
 	private int pid;
@@ -41,11 +41,11 @@ public class Congelar {
 
 
 
-	public Congelar(int cid, Date fecha_inicio, Date fecha_fin, int pid, int hid) {
+	public Congelar(int cid, Date fechainicio, Date fechafin, int pid, int hid) {
 		super();
 		this.cid = cid;
-		this.fecha_inicio = fecha_inicio;
-		this.fecha_fin = fecha_fin;
+		this.fechainicio = fechainicio;
+		this.fechafin = fechafin;
 		this.pid = pid;
 		this.hid = hid;
 	}
@@ -77,27 +77,27 @@ public class Congelar {
 		this.cid = cid;
 	}
 
-	public Date getFecha_inicio() {
-		return fecha_inicio;
+	public Date getFechainicio() {
+		return fechainicio;
 	}
 
-	public void setFecha_inicio(Date fecha_inicio) {
-		this.fecha_inicio = fecha_inicio;
+	public void setFechainicio(Date fecha_inicio) {
+		this.fechainicio = fecha_inicio;
 	}
 
-	public Date getFecha_fin() {
-		return fecha_fin;
+	public Date getFechafin() {
+		return fechafin;
 	}
 
-	public void setFecha_fin(Date fecha_fin) {
-		this.fecha_fin = fecha_fin;
+	public void setFechafin(Date fecha_fin) {
+		this.fechafin = fecha_fin;
 	}
 
 	public boolean validate() {
 		boolean isValid=true;
 		
-		if(this.fecha_inicio==null) isValid=false;
-		if(this.fecha_fin!=null) isValid=false;
+		if(this.fechainicio==null) isValid=false;
+		if(this.fechafin!=null) isValid=false;
 		
 		return isValid;
 	}
