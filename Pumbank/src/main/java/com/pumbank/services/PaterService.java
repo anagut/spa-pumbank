@@ -95,7 +95,7 @@ public class PaterService {
 	@Path("/hijos/{hid}")
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
-	public Response getHijo(@PathParam("pid") int pid, int hid) {
+	public Response getHijo(@PathParam("pid") int pid, @PathParam("hid") int hid) {
 
 		Response resp = null;
 		Hijx hijo;
