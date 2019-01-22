@@ -31,10 +31,10 @@ public class PaterService {
 	public Response getPadre(@PathParam("pid") int pid) {
 
 		Response resp = null;
-		Padre padre;
+		
 		try {
-			padre = PadreManager.getInstance().getPadre(pid);
-
+			Padre padre = PadreManager.getInstance().getPadre(pid);
+			
 			if (padre == null) {
 				resp = Response.status(404).entity(new StatusMessage(404, "El usuario padre no existe")).build();
 			} else {
@@ -51,9 +51,9 @@ public class PaterService {
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
 	public Response getHijos(@PathParam("pid") int pid) {
-		Padre padre;
+
 		try {
-			padre = PadreManager.getInstance().getPadre(pid);
+			Padre padre = PadreManager.getInstance().getPadre(pid);
 
 			List<Hijx> hijos = padre.getHijos();
 
@@ -95,7 +95,7 @@ public class PaterService {
 	@Path("/hijos/{hid}")
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
-	public Response getHijo(@PathParam("pid") int pid, int hid) {
+	public Response getHijo(@PathParam("pid") int pid, @PathParam("hid") int hid) {
 
 		Response resp = null;
 		Hijx hijo;
@@ -133,6 +133,32 @@ public class PaterService {
 	}
 
 	@Path("/hijos/{hid}/paga")
+	
+	@GET
+	@Produces(MediaType.APPLICATION_JSON)
+	public Response getPagaByHid(@PathParam("pgid") int pgid, @PathParam("hid") int hid) {
+		
+		Response resp = null;
+		
+		try {
+			Paga unaPaga = PagaManager.getInstance().existePaga(hid);
+			
+			if (unaPaga == null) {
+				resp = Response.status(400).entity(new StatusMessage(404, "No hay paga asignada")).build();
+			}else {
+				resp = Response.status(200).entity(unaPaga).build();
+			}
+			
+		} catch (Exception e) {
+			e.getStackTrace();
+			System.out.println("Exception:"+e.getMessage());
+			resp = Response.status(400).entity(new StatusMessage(500, "Servidor caído: no soy el banco de España")).build();
+		}
+		
+		return resp;
+		
+	}
+	
 	@POST
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Produces(MediaType.APPLICATION_JSON)
@@ -142,6 +168,7 @@ public class PaterService {
 			unaPaga.setHid(hid);
 			unaPaga.setPid(pid);
 			PagaManager pm = PagaManager.getInstance();
+			
 			if (unaPaga.validate()) {
 				pm.addPaga(unaPaga);
 				resp = Response.status(200).entity(pm.addPaga(unaPaga)).build();
