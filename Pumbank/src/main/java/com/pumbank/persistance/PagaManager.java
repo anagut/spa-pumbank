@@ -52,12 +52,12 @@ public class PagaManager {
 				break;
 			}
 		}
-
 		
 		session.close();
 		return paga;
 
 	}
+	
 
 	public Paga getPaga(int pgid) throws Exception {
 
