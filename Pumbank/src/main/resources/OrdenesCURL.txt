@@ -19,7 +19,11 @@ PUT ACTUALIZAR SALDO
 curl -X PUT -d "{\"hid\":7,\"nombre\":\"Junior\",\"apellidos\":\"Virgin\",\"fechanacimiento\":-3600000,\"saldo\":520.0,\"email\":\"anadir@insertar\",\"password\":\"Virgin\"}" -H"Content-Type:application/json" http://localhost:8080/Pumbank/api/padre/1/hijos/1 -v
 
 GET OBTENER PAGA
+curl http://localhost:8080/Pumbank/api/padre/1/hijos/1/paga -v
 curl -H"Content-Type:application/json" http://localhost:8080/PumbankAPI/api/padre/{pid}/hijos/{hid}/paga -v
+
+GET OBTENER LISTA DE PAGAS
+
 
 POST CREA PAGA
 curl -X POST -d "{\"cantidad\":33,\"frecuencia\":34}" -H"Content-Type:application/json" http://localhost:8080/Pumbank/api/padre/1/hijos/1/paga -v
