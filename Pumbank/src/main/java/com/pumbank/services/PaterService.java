@@ -213,7 +213,9 @@ public class PaterService {
 				nuevoCongelado.setHid(hid);
 				nuevoCongelado.setPid(pid);
 				pm.createCongelar(nuevoCongelado);
-				resp = Response.status(200).entity(pm.createCongelar(nuevoCongelado)).build();
+				int cid=pm.createCongelar(nuevoCongelado);
+				nuevoCongelado.setConid(cid);
+				resp = Response.status(200).entity(nuevoCongelado).build();
 			} else {
 				resp = Response.status(400).entity(new StatusMessage(400, "Pedido incompleto")).build();
 			}

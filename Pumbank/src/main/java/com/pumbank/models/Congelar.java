@@ -97,7 +97,7 @@ public class Congelar {
 		boolean isValid=true;
 		
 		if(this.fechainicio==null) isValid=false;
-		if(this.fechafin!=null) isValid=false;
+		if(this.fechafin==null) isValid=false;
 		
 		return isValid;
 	}

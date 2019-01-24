@@ -37,7 +37,7 @@ PUT ACTUALIZAR CONGELADO
 curl -X PUT -d "{\"cid\":0,\"fechainicio\":\"yyyy-MM-dd\",\"fechafin\":\"yyyy-MM-dd\"}" -H"Content-Type:application/json" http://localhost:8080/Pumbank/api/padre/{pid}/hijos/{hid}/congelar/{cid} -v
 
 POST CREAR CONGELADO
-curl -X POST -d "{\"cid\":0,\"fechainicio\":\"yyyy-MM-dd\",\"fechafin\":\"yyyy-MM-dd\"}"  -H"Content-Type:application/json" http://localhost:8080/Pumbank/api/padre/{pid}/hijos/{hid}/congelar -v
+curl -X POST -d "{\"cid\":0,\"fechainicio\":\"2020-12-12\",\"fechafin\":\"2021-12-11\"}"  -H"Content-Type:application/json" http://localhost:8080/Pumbank/api/padre/1/hijos/1/congelar -v
 
 DELETE BORRAR CONGELADO
 curl -X DELETE -H"Content-Type:application/json" http://localhost:8080/Pumbank/api/padre/{pid}/hijos/{hid}/congelar/{cid} -v
